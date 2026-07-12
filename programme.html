@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>programme</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Double:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <img src="images/logo.png" width="160" height="60">
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="index.html">Acceuil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Inscription</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- hero interne -->
+    <section>
+        <nav aria-label="Fil d'Ariane">
+            <ol>
+                <li><a href="index.html">Accueil</a></li>
+                <li aria-current="page">Programme</li>
+            </ol>
+        </nav>
+
+        <h1>Programme de l'Événement</h1>
+        <p>Découvrez l'agenda complet, les ateliers pratiques et les tables rondes d'AfriConnect Summit 2026.</p>
+    </section>
+
+    <!-- onglets 3 jours -->
+    <section>
+        <h2>Planning des Sessions</h2>
+
+        <div role="tablist" aria-label="Planning par jour">
+            <button role="tab" aria-selected="true" aria-controls="panel-jour1" id="tab-jour1">Jour 1</button>
+            <button role="tab" aria-selected="false" aria-controls="panel-jour2" id="tab-jour2">Jour 2</button>
+            <button role="tab" aria-selected="false" aria-controls="panel-jour3" id="tab-jour3">Jour 3</button>
+        </div>
+
+        <div id="panel-jour1" role="tabpanel" aria-labelledby="tab-jour1">
+            <h3>Jour 1 — Vision, Innovation & Cybersécurité</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Heure</th>
+                        <th>Session</th>
+                        <th>Intervenant</th>
+                        <th>Salle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:30 - 09:30</td>
+                        <td>Accueil des participants et enregistrement</td>
+                        <td>Équipe d'organisation</td>
+                        <td>Hall Principal</td>
+                    </tr>
+                    <tr>
+                        <td>09:30 - 11:00</td>
+                        <td>Cérémonie d'ouverture & Keynote : L'état de la souveraineté numérique en Afrique</td>
+                        <td>Afi Diallo</td>
+                        <td>Amphithéâtre Principal</td>
+                    </tr>
+                    <tr>
+                        <td>11:15 - 12:30</td>
+                        <td>Table ronde : Infrastructures Cloud d'importance vitale et résilience face aux cybermenaces
+                        </td>
+                        <td>Malik Adebayo, Afi Diallo</td>
+                        <td>Salle Conférence A</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td>Atelier pratique : Audit de sécurité et premiers réflexes sur Kali Linux</td>
+                        <td>Expert Sécurité Invité</td>
+                        <td>Lab Numérique</td>
+                    </tr>
+                    <tr>
+                        <td>16:00 - 17:30</td>
+                        <td>Pitch Session : Les innovations cybersécurité de la sous-région</td>
+                        <td>Startups sélectionnées</td>
+                        <td>Amphithéâtre Principal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="panel-jour2" role="tabpanel" aria-labelledby="tab-jour2">
+            <h3>Jour 2 — Intelligence Artificielle & Data Architecture</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Heure</th>
+                        <th>Session</th>
+                        <th>Intervenant</th>
+                        <th>Salle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00 - 10:30</td>
+                        <td>Keynote : Révolutionner les LLM avec l'intégration des langues africaines</td>
+                        <td>Prince TATI</td>
+                        <td>Amphithéâtre Principal</td>
+                    </tr>
+                    <tr>
+                        <td>10:45 - 12:15</td>
+                        <td>Panel : Gouvernance des données et conformité réglementaire de la CEDEAO</td>
+                        <td>Comité d'experts</td>
+                        <td>Salle Conférence B</td>
+                    </tr>
+                    <tr>
+                        <td>13:30 - 15:00</td>
+                        <td>Masterclass : Déploiement de modèles de Deep Learning en environnements contraints</td>
+                        <td>Prince TATI</td>
+                        <td>Lab Numérique</td>
+                    </tr>
+                    <tr>
+                        <td>15:15 - 16:30</td>
+                        <td>Conférence : L'impact de l'IA dans la détection proactive des fraudes financières</td>
+                        <td>Nelly Mukam</td>
+                        <td>Salle Conférence A</td>
+                    </tr>
+                    <tr>
+                        <td>16:45 - 18:00</td>
+                        <td>Session d'échange : Éthique, IA et biais algorithmiques</td>
+                        <td>Collectif Tech</td>
+                        <td>Amphithéâtre Principal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="panel-jour3" role="tabpanel" aria-labelledby="tab-jour3">
+            <h3>Jour 3 — Fintech, Web3 & Clôture</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Heure</th>
+                        <th>Session</th>
+                        <th>Intervenant</th>
+                        <th>Salle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00 - 10:30</td>
+                        <td>Conférence d'ouverture : Inclusion financière globale grâce à l'écosystème FinTech</td>
+                        <td>Nelly Mukam</td>
+                        <td>Amphithéâtre Principal</td>
+                    </tr>
+                    <tr>
+                        <td>10:45 - 12:30</td>
+                        <td>Workshop : Création d'architectures transactionnelles sécurisées et scalables</td>
+                        <td>Youssef Moul, Nelly Mukam</td>
+                        <td>Lab Numérique</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td>Table ronde : Investir dans la tech africaine, les critères des VC en 2026</td>
+                        <td>Youssef Benjelloun</td>
+                        <td>Salle Conférence A</td>
+                    </tr>
+                    <tr>
+                        <td>15:45 - 17:00</td>
+                        <td>Présentation des livrables du Hackathon et remise des prix</td>
+                        <td>Membres du Jury</td>
+                        <td>Amphithéâtre Principal</td>
+                    </tr>
+                    <tr>
+                        <td>17:00 - 18:00</td>
+                        <td>Discours de clôture officiels et cocktail de networking</td>
+                        <td>Comité de direction AfriConnect</td>
+                        <td>Hall Principal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- section thematiques -->
+    <section>
+        <h2>Thématiques de la Conférence</h2>
+
+        <div>
+            <article class="scroll-reveal">
+                <div>
+                    <i></i>
+                </div>
+                <h3>Cybersécurité & Souveraineté</h3>
+                <p>Protection des infrastructures critiques, audit défensif et enjeux de la gouvernance des données sur
+                    le continent.</p>
+            </article>
+
+            <article class="scroll-reveal">
+                <div>
+                    <i></i>
+                </div>
+                <h3>Intelligence Artificielle & Data</h3>
+                <p>Modèles de langage appliqués aux réalités locales, traitement des données de masse et opportunités
+                    sectorielles.</p>
+            </article>
+
+            <article class="scroll-reveal">
+                <div>
+                    <i></i>
+                </div>
+                <h3>Fintech & Web3 Transactions</h3>
+                <p>Inclusion financière globale, architectures décentralisées, protocoles de paiement et monnaies
+                    numériques.</p>
+            </article>
+
+            <article class="scroll-reveal">
+                <div>
+                    <i></i>
+                </div>
+                <h3>Cloud & Infrastructures Scalables</h3>
+                <p>Déploiement réseau, conteneurisation avancée et solutions cloud panafricaines hautement disponibles.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div>
+            <div>
+                <h3>AfriConnect Summit 2026</h3>
+                <p>Le point de rencontre annuel de l'innovation technologique et de la cybersécurité en Afrique.</p>
+            </div>
+    
+            <div>
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="inscription.html">S'inscrire</a></li>
+                </ul>
+            </div>
+    
+            <div>
+                <h3>Suivez-nous</h3>
+                <div>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+    
+        <div>
+            <p>&copy; <span id="currentYear">0000</span> AfriConnect by BTAN Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Double:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <img src="images/logo.png" width="160" height="60">
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="index.html">Acceuil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Inscription</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- hero interne -->
+    <section>
+        <nav aria-label="Fil d'Ariane">
+            <ol>
+                <li><a href="index.html">Accueil</a></li>
+                <li aria-current="page">Contact</li>
+            </ol>
+        </nav>
+
+        <h1>Contactez l'Équipe AfriConnect</h1>
+        <p>Une question sur l'événement, une demande de partenariat ou besoin d'assistance logistique ? Nous sommes à
+            votre écoute.</p>
+    </section>
+
+    <!-- section formulaire -->
+    <section>
+        <h2>Formulaire d'Inscription Officiel</h2>
+
+        <div>
+
+            <div>
+                <form id="registrationForm" action="#" method="POST">
+
+                    <div>
+                        <label for="fullName">Nom complet :</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Ex: Fatou Diop">
+                    </div>
+
+                    <div>
+                        <label for="userEmail">Adresse électronique :</label>
+                        <input type="email" id="userEmail" name="email" required placeholder="nom@exemple.com">
+                    </div>
+
+                    <div>
+                        <label for="userPhone">Numéro de téléphone :</label>
+                        <input type="tel" id="userPhone" name="phone" required placeholder="Ex: +221 77 000 00 00">
+                    </div>
+
+                    <div>
+                        <label for="participationType">Type de participation :</label>
+                        <select id="participationType" name="participationType" required>
+                            <option value="">-- Choisissez une option --</option>
+                            <option value="standard">Pass Standard - Accès Conférences</option>
+                            <option value="premium">Pass Premium - Accès Conférences & Ateliers</option>
+                            <option value="vip">Pass VIP - Espaces Privés & Soirée Gala</option>
+                            <option value="student">Tarif Réduit - Étudiant</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="africanCountry">Pays d'origine :</label>
+                        <select id="africanCountry" name="country" required>
+                            <option value="">-- Sélectionnez votre pays --</option>
+                            <option value="senegal">Sénégal</option>
+                            <option value="congo">Congo</option>
+                            <option value="cote-divoire">Côte d'Ivoire</option>
+                            <option value="maroc">Maroc</option>
+                            <option value="cameroun">Cameroun</option>
+                            <option value="ghana">Ghana</option>
+                            <option value="kenya">Kenya</option>
+                            <option value="tunisie">Tunisie</option>
+                            <option value="ethiopie">Éthiopie</option>
+                            <option value="afrique-du-sud">Afrique du Sud</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="userMotivation">Message ou Motivations :</label>
+                        <textarea id="userMotivation" name="motivation" rows="5" required
+                            placeholder="Pourquoi souhaitez-vous participer à l'AfriConnect Summit ?"></textarea>
+                    </div>
+
+                    <button type="submit">Valider mon inscription</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- section faq accordeon -->
+    <section>
+        <h2>Foire Aux Questions (FAQ)</h2>
+
+        <div class="faq-accordion">
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq-q1" class="faq-toggle">
+                <label for="faq-q1" class="faq-title">Où et quand se déroule l'AfriConnect Summit 2026 ?</label>
+                <div class="faq-content">
+                    <p>L'événement se tiendra du 15 au 17 Novembre 2026 au Centre de Conférences Internationales de
+                        Dakar (CICAD) à Diamniadio, Sénégal.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq-q2" class="faq-toggle">
+                <label for="faq-q2" class="faq-title">Qui peut participer à cet événement ?</label>
+                <div class="faq-content">
+                    <p>Le sommet est ouvert aux professionnels de la tech, étudiants en cybersécurité ou informatique,
+                        entrepreneurs, investisseurs (VC) et décideurs institutionnels du continent et de
+                        l'international.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq-q3" class="faq-toggle">
+                <label for="faq-q3" class="faq-title">Comment vais-je recevoir mon billet après mon inscription
+                    ?</label>
+                <div class="faq-content">
+                    <p>Une fois votre formulaire validé et traité par notre équipe sous 48h, vous recevrez un e-billet
+                        sécurisé muni d'un QR Code unique directement sur l'adresse électronique renseignée.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq-q4" class="faq-toggle">
+                <label for="faq-q4" class="faq-title">Un certificat de participation est-il délivré ?</label>
+                <div class="faq-content">
+                    <p>Oui, un certificat officiel de présence et de compétences, cosigné par les partenaires
+                        académiques et de l'événement, sera envoyé au format numérique à tous les participants ayant
+                        assisté aux ateliers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq-q5" class="faq-toggle">
+                <label for="faq-q5" class="faq-title">Comment puis-je soumettre un projet pour les sessions de pitch
+                    ?</label>
+                <div class="faq-content">
+                    <p>Vous devez d'abord cocher l'option correspondante lors de votre inscription. Un lien de
+                        soumission de votre Pitch Deck vous sera envoyé pour évaluation par le comité de sélection des
+                        startups.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div>
+            <div>
+                <h3>AfriConnect Summit 2026</h3>
+                <p>Le point de rencontre annuel de l'innovation technologique et de la cybersécurité en Afrique.</p>
+            </div>
+    
+            <div>
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="inscription.html">S'inscrire</a></li>
+                </ul>
+            </div>
+    
+            <div>
+                <h3>Suivez-nous</h3>
+                <div>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+    
+        <div>
+            <p>&copy; <span id="currentYear">0000</span> AfriConnect by BTAN Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
