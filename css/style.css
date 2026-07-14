@@ -1,0 +1,1184 @@
+*{
+    margin: 0;
+}
+/* Importation de la police d'écriture 'Poppins et Monsterrat' depuis les serveurs Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+/* Déclaration des six variables css dans root */
+:root{
+     --border-radius: 12px;
+     --text-align: center;
+     --secondary-color:rgb(4, 4, 4);
+     --font-size: 16px;
+     --bg-light: #f8fafc;  
+     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     --bs-success: #10b981; 
+    --bs-danger: #d53f69;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: var(--bs-success); /* Fond Vert Émeraude */
+    display: flex;
+    justify-content: space-between; /*image à gauche et nav à droite */
+    align-items: center;
+    padding: 0 40px;
+    opacity: 1;
+    z-index: 9999
+}
+
+/* Suppression des marges/paddings de la div intermédiaire si nécessaire */
+header nav div {
+    display: flex;
+    align-items: center;
+}
+
+/* Liste de navigation */
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    gap: 35px; /* Espace entre les liens */
+}
+
+/* Liens */
+header nav a {
+    color: var(--secondary-color); /* Texte Noir */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: var(--font-size);
+}
+
+/* Effet au survol des liens */
+header nav a:hover {
+    color: var(--bs-danger);
+}
+
+/* SECTION HERO - AFRICONNECT SUMMIT */
+/* Animation d'apparition globale */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: var(--text-align, center);
+    padding: 100px 20px 40px 20px; /* Le padding-top évite la superposition avec la navbar fixe */
+    font-family: var(--font-family, sans-serif);
+}
+
+.hero-container {
+    max-width: 900px;
+    width: 100%;
+    /* Application de l'animation au conteneur principal */
+    animation: fadeInUp 1s ease-out forwards;    
+}
+
+/* Styles des titres */
+.titre {
+    font-size: 3rem;
+    color: var(--bs-success);
+    margin-bottom: 15px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.soustitre {
+    color: var(--bs-danger); 
+    font-weight: bold;
+}
+
+.date {
+    font-size: 1.3rem;
+    color: var(--bs-success);
+    font-weight: 500;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+/* Bloc Boutons CTA */
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
+}
+
+/* Bouton Réserver mon pass (Rose) */
+.btn1 {
+    background-color: transparent;
+    color: var(--bs-danger);
+    border: 2px solid var(--bs-danger);
+}
+
+.btn1:hover {
+   background-color: var(--bs-danger);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Bouton Voir le programme (Vert Émeraude) */
+.btn2 {
+    background-color: transparent;
+    color: var(--bs-success);
+    border: 2px solid var(--bs-success);
+}
+
+.btn2:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Section Compte à Rebours (Boxes) */
+.compteur {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius,);
+    min-width: 90px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 3px solid var(--bs-success); 
+}
+
+/* Bordure pour jours(1) et minutes (3) */
+.box:nth-child(1),
+.box:nth-child(3) {
+    border: 2px solid var(--bs-success);
+}
+
+/* Bordure pour heures (2e) et Secondes (4e) */
+.box:nth-child(2),
+.box:nth-child(4) {
+    border: 2px solid var(--bs-danger);
+}
+
+.number {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.label {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 5px;
+}
+/* background en video */
+/* Vidéo en plein écran  */
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre proprement sans déformer */
+}
+
+/* Masque sombre pour un excellent contraste */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7),  rgba(0, 0, 0, 0.5) ); /* Un peu plus sombre en haut pour la lisibilité de la navbar */
+}
+
+/* Section Statistiques - CSS GRID RESPONSIVE */
+
+.stats-section {
+    padding: 60px 20px;
+    background-color: var(--bg-light,);
+    text-align: var(--text-align);
+    font-family: var(--font-family);
+}
+
+.stats-titre {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/*  Configuration de la Grille Principale */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/*  Style individuel de chaque carte statistique */
+.stat-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid #e2e8f0;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Rappels de couleurs  */
+.stat-card:first-child {
+    border-bottom: 4px solid var(--bs-success); 
+}
+.stat-card:last-child {
+    border-bottom: 4px solid var(--bs-danger);
+}
+
+/* Style des grands chiffres */
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+/* Style des textes sous les chiffres */
+.stat-label {
+    font-size: 1rem;
+    color: #475569;
+    margin: 0;
+    font-weight: 500;
+}
+
+
+/* Section Argument - FLEXBOX */
+
+.why-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    text-align: var(--text-align);
+    font-family: var(--font-family);
+}
+
+.why-titre {
+    font-size: 2rem;
+    color: var(--secondary-color, #040404);
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* Conteneur Flexbox */
+.why-flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Aligne toutes les cartes à la même hauteur */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style de chaque article (Carte) */
+.scroll-reveal {
+    flex: 1; /* Distribue l'espace équitablement (3 colonnes) */
+    background: var(--bg-light,);
+    padding: 40px 25px;
+    border-radius: var(--border-radius, 12px);
+    border: 3px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-reveal:hover {
+    transform: translateY(-5px);
+    border-color: var(--bs-danger);
+}
+
+/*  Le cercle qui entoure l'icône */
+.icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(16, 185, 129, 0.1); /* Fond vert transparent */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Style de l'icône Font Awesome */
+.icon-wrapper i {
+    font-size: 1.8rem;
+    color: var(--bs-success); /* Icône en vert émeraude */
+}
+
+.scroll-reveal h3 {
+    font-size: 1.35rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.scroll-reveal p {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Section Intervenants - CSS GRID et HOVER */
+
+.speakers-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    text-align: var(--text-align);
+    font-family: var(--font-family);
+}
+
+.speakers-titre {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/*  Structure de la Grille (4 colonnes) */
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+/*  Style des Cartes Intervenants */
+.speaker-card {
+    background: var(--bg-light, #e7f0f8);
+    border: 3px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Important pour garder l'effet zoom dans les limites de la carte */
+}
+
+/*  Gestion et Conteneur de l'Image */
+.speaker-img-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.speaker-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease; /* Fluidité du zoom */
+}
+
+/*  Noms et Titres */
+.speaker-name {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.speaker-role {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin: 0 0 12px 0;
+    font-weight: 500;
+}
+
+/*  Badge du Pays */
+.speaker-country {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: rgba(213, 63, 105, 0.1); /* Fond rose translucide */
+    color: var(--primary-color, #d53f69);
+}
+
+.speaker-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--bs-success); 
+}
+
+/* Zoom avant sur la photo au survol de la carte */
+.speaker-card:hover .speaker-img-container img {
+    transform: scale(1.15);
+}
+
+/* Changer la couleur du badge pays au survol */
+.speaker-card:hover .speaker-country {
+    background-color: var(--bs-danger);
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Bouton de direction (CTA)*/
+.speakers-action {
+    margin-top: 20px;
+}
+
+.btn-speakers {
+    display: inline-block;
+    padding: 14px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--bs-success);
+    border: 2px solid var(--bs-success);
+    border-radius: var(--border-radius);
+    transition: all 0.25s ease;
+}
+
+.btn-speakers:hover {
+    background-color: var(--bs-success);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+/*  Section Partenaires - FLEXBOX & NIVEAUX VISUELS */
+
+.partners-section {
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+    text-align: var(--text-align, center);
+    font-family: var(--font-family, sans-serif);
+}
+
+.partners-main-titre {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+/* Alignement vertical des différents blocs de catégories */
+.partners-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Espace confortable entre Or, Argent et Bronze */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Structure  d'une catégorie */
+.partner-tier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tier-titre {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/*  Le conteneur Flexbox qui gère l'alignement des logos */
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Permet un retour à la ligne propre sur mobile */
+    width: 100%;
+}
+
+/* Style commun à tous les blocs de logos */
+.partner-logo {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius, 12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: translateY(-3px);
+}
+/* Comportement des images à l'intérieur */
+.partner-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Empêche l'image de se déformer */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* differenciation des tailles et bordures */
+/*  LOGOS OR : Très grands et valorisés */
+.tier-gold .tier-titre {
+    color: #d97706; /* Couleur dorée */
+}
+.tier-gold .partner-logo {
+    width: 260px;
+    height: 120px;
+    font-size: 1.1rem;
+    border: 2px solid rgba(217, 151, 6, 0.2);
+}
+.tier-gold .partner-logo:hover {
+    border-color: #d97706;
+}
+
+/*  LOGOS ARGENT : Taille standard équilibrée */
+.tier-silver .tier-titre {
+    color: #475569; /* Couleur argent / ardoise */
+}
+.tier-silver .partner-logo {
+    width: 190px;
+    height: 95px;
+    font-size: 0.95rem;
+    border: 1.5px solid rgba(71, 85, 105, 0.2);
+}
+.tier-silver .partner-logo:hover {
+    border-color: #475569;
+}
+
+/* LOGOS BRONZE : Plus petits et discrets */
+.tier-bronze .tier-titre {
+    color: #b45309; /* Couleur bronze / cuivre */
+}
+.tier-bronze .partner-logo {
+    width: 140px;
+    height: 75px;
+    font-size: 0.85rem;
+    opacity: 0.85; /* Légèrement en retrait visuel */
+}
+.tier-bronze .partner-logo:hover {
+    opacity: 1;
+    border-color: #b45309;
+}
+
+
+/* Footer  */
+.main-footer {
+    background-color: var(--accent-color, #10b981);
+    font-family: var(--font-family, sans-serif);
+}
+
+/* Intervenants.html*/
+
+/* Conteneur principal de la bannière */
+.ariane-banner {
+    background-color: #f8f3f3 ; 
+    width: 100% ;
+    padding: 40px 20px ;
+    box-sizing: border-box ;
+    display: block ;
+}
+
+/* Alignement du contenu au centre (max 1200px) */
+.ariane-container {
+    max-width: 1200px ;
+    margin: 0 auto ;
+}
+
+/* Style de la navigation du fil d'Ariane */
+.ariane-nav {
+    margin-bottom: 15px;
+    display: block ;
+}
+
+/* Force l'alignement horizontal ET supprime les puces/chiffres du <ol> */
+.ariane-links {
+    display: flex ;
+    padding-top: 80px
+}
+
+/* Style de chaque élément (li) du fil d'Ariane */
+.ariane-links li {
+    display: flex;
+    align-items: center ;
+    color: var(--secondary-color) ; 
+    font-size: 10 px;
+    font-weight: 700 ;
+}
+
+/* Style spécifique pour le lien cliquable (Accueil) */
+.ariane-links a {
+    color: var(--secondary-color);
+    text-decoration: none ;
+    transition: color 0.2s ease ;
+}
+
+/* Effet au survol du lien Accueil */
+.ariane-links a:hover {
+    color: var(--bs-danger) ; 
+}
+
+/*  Injection automatique du séparateur ">" uniquement ENTRE les éléments */
+.ariane-links li + li::before {
+    content: ">" ;
+    padding: 0 10px ;
+    color: var(--secondary-color);
+    font-weight: 600 ;
+}
+
+/* Style du Grand Titre (Rose) */
+.ariane-title {
+    color: var(--secondary-color) ;
+    font-size: 2rem ;
+    font-weight: 700 ;
+    text-align: center;
+}
+
+/* Style de la description */
+.ariane-desc {
+    color: var(--secondary-color);
+    font-size: 1.5rem ;
+    line-height: 1.5 ;
+    font-weight: 500 ;
+    margin: 0 ;
+    text-align: center;
+}
+/* Section filtrage & grille d'intervenants*/
+
+.speakers-filter-section {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: var(--bg-light);
+    font-family: var(--font-family);
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.speakers-filter-section .section-title {
+    color: var(--secondary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* --- Style des Boutons de Filtre --- */
+.filter-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 50px;
+}
+
+.btn-filter {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-filter:hover {
+    color: var(--bs-danger);
+    border-color: var(--bs-danger);
+}
+
+/*  Mise en evidence du bouton actif(Mise à jour via aria-pressed) */
+.btn-filter[aria-pressed="true"] {
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(213, 63, 105, 0.25);
+}
+
+/* --- Alignement en Grille des Cartes (3 colonnes adaptatives) --- */
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Planning du jour  */
+.schedule-section {
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-family: var(--font-family);
+}
+
+.schedule-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Barre d'onglets (Navigation par jour) --- */
+.schedule-tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+/* Boutons de base */
+.tab-button {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.6);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    bottom: -3px; /* Aligne avec la bordure inférieure */
+    transition: all 0.25s ease;
+}
+
+/* Effet au survol d'un onglet */
+.tab-button:hover {
+    color: var(--bs-danger);
+}
+
+/* MISE EN ÉVIDENCE DE L'ONGLET SÉLECTIONNÉ */
+.tab-button[aria-selected="true"] {
+    color: var(--bs-danger);
+    border-bottom: 3px solid var(--bs-danger); 
+}
+
+/* --- Gestion d'affichage dynamique via ARIA--- */
+.schedule-panel {
+    display: none; /* Cache tous les panels par défaut */
+}
+
+/* Affiche le panel lié à l'onglet sélectionné */
+.schedule-panel[aria-hidden="false"], 
+.schedule-panel:first-of-type {
+    display: block; /* Affiche le premier ou celui activé par le JS */
+}
+
+/* Pour que js gère l'affichage en modifiant simplement aria-selected / aria-hidden */
+.schedule-panel[style*="display: none"] {
+    display: none;
+}
+
+/* Titre interne de chaque jour */
+.panel-title {
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--bs-success); 
+    padding-left: 15px;
+}
+#panel-jour1 {
+    display: block;
+}
+/* Quand tu ajouteras le JS, il te suffira d'ajouter/retirer la classe "active" */
+.schedule-panel.active {
+    display: block ;
+}
+
+/* --- Tableaux responsive --- */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; /* Permet le swipe horizontal sur smartphone */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #ffffff;
+    font-size: 0.95rem;
+}
+
+/* En-tête du tableau  */
+.schedule-table th {
+    background-color: var(--accent-color, #10b981);
+    color: #000000;
+    font-weight: 700;
+    padding: 16px 20px;
+    border: none;
+    font-size: 1rem;
+}
+
+/* Cellules globales */
+.schedule-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    vertical-align: middle;
+    color: #000000;
+}
+
+/* ALTERNANCE DE COULEUR DES LIGNES */
+.schedule-table tbody tr:nth-of-type(even) {
+    background-color: #f8fafc; 
+}
+
+/* Survol de ligne discret */
+.schedule-table tbody tr:hover {
+    background-color: rgba(213, 63, 105, 0.03); 
+}
+
+/* --- Largeurs et styles spécifiques des colonnes --- */
+.col-time {
+    font-weight: 700;
+    color: var(--bs-danger);
+    white-space: nowrap;
+    width: 15%;
+}
+
+.col-session {
+    font-weight: 500;
+    line-height: 1.5;
+    width: 45%;
+}
+
+.col-speaker {
+    font-weight: 600;
+    width: 20%;
+}
+
+.col-room {
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.8);
+    width: 20%;
+}
+
+/* SECTION INSCRIPTION ET CONTACT (DEUX COLONNES & MAPS)*/
+
+.registration-section {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #f8fafc; /* Gris très doux pour détacher de l'en-tête */
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+.registration-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px; /* Espace entre la colonne formulaire et la colonne cartes */
+    flex-wrap: wrap; /* S'empile sur mobile */
+}
+
+/* --- Colonnes --- */
+.form-column {
+    flex: 1 1 550px; /* Prend plus de place, minimum 550px */
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-column {
+    flex: 1 1 400px; /* Plus compact pour les infos et la carte */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* --- Titres --- */
+.section-title-form {
+    font-size: 1.8rem;
+    color: var(--bs-success);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.section-title-info {
+    font-size: 1.8rem;
+    color: var(--bs-danger);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* --- Style des champs du Formulaire --- */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #000000;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Focus actif (Vert émeraude) */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color, #10b981);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+/* Bouton de validation (Rose magenta) */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--bs-danger);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.btn-submit:hover {
+    background-color: #be2e54; /* Rose plus foncé au survol */
+}
+
+/* Message de validation (Succès) caché par défaut */
+.success-message {
+    display: none; /* Ton JS le passera en "display: block" lors de la soumission */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(16, 185, 129, 0.15);
+    border-left: 5px solid var(--bs-success);
+    color: #0d7752;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+/* --- Informations de contact (Détails) --- */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-item i {
+    font-size: 1.25rem;
+    color: var(--bs-success);
+    padding-top: 3px;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.contact-item p, 
+.contact-item a {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: var(--bs-danger);
+}
+
+/* --- Conteneur Carte Google Maps --- */
+.map-container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/*  ACCORDÉON DE LA FAQ  */
+
+.faq-section {
+    width: 100%;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    font-family: var(--font-family, sans-serif);
+}
+
+.faq-container {
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.faq-main-title {
+    font-size: 2.2rem;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* --- Structure de l'accordéon --- */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Écart entre chaque question */
+}
+
+.faq-item {
+    background-color: #f8fafc; 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border-color: rgba(16, 185, 129, 0.2); 
+}
+
+/* Cache complètement les cases à cocher */
+.faq-toggle {
+    display: none ;
+}
+
+/* --- Style de l'en-tête de la Question --- */
+.faq-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.25s ease;
+}
+
+.faq-title:hover {
+    color: var(--bs-danger); 
+}
+
+/* Style de la flèche (chevron) */
+.faq-icon {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* --- Logique d'animation et d'affichage  --- */
+/* Le conteneur du texte est replié par défaut */
+.faq-content {
+    max-height: 0; 
+    overflow: hidden; 
+    padding: 0 24px; 
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+}
+
+.faq-content p {
+    margin: 0;
+    padding-bottom: 20px; 
+    color: rgba(0, 0, 0, 0.75);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ---  Comportement quand l'input est coché (:checked) --- */
+
+/* Déploie la zone de texte */
+.faq-toggle:checked ~ .faq-content {
+    max-height: 300px; 
+    padding: 0 24px 10px 24px;
+}
+
+/* Colore le titre de la question active  */
+.faq-toggle:checked ~ .faq-title {
+    color: var(--bs-success);
+}
+
+/* Fait pivoter la flèche de 180° et la passe en vert émeraude */
+.faq-toggle:checked ~ .faq-title .faq-icon {
+    transform: rotate(180deg);
+    color: var(--bs-danger);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

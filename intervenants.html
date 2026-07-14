@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intervenants</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Double:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Double:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
@@ -27,166 +31,171 @@
     </header>
 
     <!-- hero interne -->
-    <section>
-        <nav aria-label="Fil d'Ariane">
-            <ol>
-                <li><a href="index.html">Accueil</a></li>
-                <li aria-current="page">Intervenants</li>
-            </ol>
-        </nav>
 
-        <h1>Nos Experts & Leaders d'Opinion</h1>
-        <p>Découvrez les esprits brillants et les spécialistes du continent réunis pour partager leurs expertises à
-            l'AfriConnect Summit 2026.</p>
-    </section>
+    <section class="ariane-banner">
+        <div class="ariane-container">
+            <nav aria-label="Fil d'Ariane" class="ariane-nav">
+                <ol class="ariane-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li aria-current="page">Intervenants</li>
+                </ol>
+            </nav>
 
-    <!-- section filtrage dynamique -->
-    <section>
-        <h2>Découvrez nos Intervenants</h2>
-
-        <div role="group" aria-label="Filtrer les intervenants par thématique">
-            <button type="button" aria-pressed="true">Tous</button>
-            <button type="button" aria-pressed="false">IA & Tech</button>
-            <button type="button" aria-pressed="false">Business</button>
-            <button type="button" aria-pressed="false">Design</button>
-            <button type="button" aria-pressed="false">Data</button>
-        </div>
-
-        <div>
-
-            <article>
-                <img src="placeholder-1.jpg" alt="Photo de Fatoumata Diallo">
-                <h3>Afi Diallo</h3>
-                <p>Spécialiste Sécurité Cloud</p>
-                <span>IA & Tech</span>
-            </article>
-
-            <article>
-                <img src="placeholder-2.jpg" alt="Photo de Malik Adebayo">
-                <h3>Prince TATI</h3>
-                <p>Architecte Solutions Data</p>
-                <span>Data</span>
-            </article>
-
-            <article>
-                <img src="placeholder-3.jpg" alt="Photo de Youssef Benjelloun">
-                <h3>Youssef Moul</h3>
-                <p>Directeur d'Investissement VC</p>
-                <span>Business</span>
-            </article>
-
-            <article>
-                <img src="placeholder-4.jpg" alt="Photo de Nelly Mukam">
-                <h3>Nelly Mukam</h3>
-                <p>Product Designer FinTech</p>
-                <span>Design</span>
-            </article>
-
+            <h1 class="ariane-title">Nos Experts & Conférenciers</h1>
+            <p class="ariane-desc">
+                Découvrez les spécialistes du continent réunis pour <br> partager leurs expertises à l'AfriConnect Summit 2026.</p>
         </div>
     </section>
 
-    <!-- section grille dintervenants -->
-    <section>
-        <h2>Nos Experts & Conférenciers</h2>
+    <section class="speakers-filter-section">
+        <div class="section-container">
+            <div class="filter-group" role="group" aria-label="Filtrer les intervenants par thématique">
+                <button type="button" class="btn-filter" aria-pressed="true">Tous</button>
+                <button type="button" class="btn-filter" aria-pressed="false">IA & Tech</button>
+                <button type="button" class="btn-filter" aria-pressed="false">Business</button>
+                <button type="button" class="btn-filter" aria-pressed="false">Design</button>
+                <button type="button" class="btn-filter" aria-pressed="false">Data</button>
+            </div>
 
-        <div>
-            <article>
-                <img src="placeholder-1.jpg" alt="Photo de Fatoumata Diallo">
-                <h3>Afi Diallo</h3>
-                <p>Directrice de la Sécurité Offensive</p>
-                <span>Sénégal</span>
-            </article>
+            <div class="speaker-grid">
 
-            <article>
-                <img src="placeholder-2.jpg" alt="Photo de Malik Adebayo">
-                <h3>Prince TATI</h3>
-                <p>Ingénieur Principal Fondations IA</p>
-                <span>Congo</span>
-            </article>
+                <article class="speaker-card" data-category="IA & Tech">
+                    <div class="speaker-img-container">
+                        <img src="images/afi.png" alt="Photo de Afi Diallo">
+                    </div>
+                    <h3 class="speaker-name">Afi Diallo</h3>
+                    <p class="speaker-role">Directrice de la Sécurité Offensive</p>
+                    <span class="speaker-country">Sénégal</span>
+                </article>
 
-            <article>
-                <img src="placeholder-3.jpg" alt="Photo de Youssef Benjelloun">
-                <h3>Youssef Moul</h3>
-                <p>Gestionnaire de Fonds Capital-Risque</p>
-                <span>Maroc</span>
-            </article>
+                <article class="speaker-card" data-category="IA & Tech">
+                    <div class="speaker-img-container">
+                        <img src="images/prince.png" alt="Photo de Prince TATI">
+                    </div>
+                    <h3 class="speaker-name">Prince TATI</h3>
+                    <p class="speaker-role">Ingénieur Principal Fondations IA</p>
+                    <span class="speaker-country">Congo</span>
+                </article>
 
-            <article>
-                <img src="placeholder-4.jpg" alt="Photo de Nelly Mukam">
-                <h3>Nelly Mukam</h3>
-                <p>Architecte Systèmes FinTech</p>
-                <span>Cameroun</span>
-            </article>
+                <article class="speaker-card" data-category="Business">
+                    <div class="speaker-img-container">
+                        <img src="images/youssef.png" alt="Photo de Youssef Moul">
+                    </div>
+                    <h3 class="speaker-name">Youssef Moul</h3>
+                    <p class="speaker-role">Gestionnaire de Fonds Capital-Risque</p>
+                    <span class="speaker-country">Maroc</span>
+                </article>
 
-            <article>
-                <img src="placeholder-5.jpg" alt="Photo de Amara Koné">
-                <h3>Amara Koné</h3>
-                <p>Consultant Cloud & DevOps</p>
-                <span>Côte d'Ivoire</span>
-            </article>
+                <article class="speaker-card" data-category="Design">
+                    <div class="speaker-img-container">
+                        <img src="images/nelly.png" alt="Photo de Nelly Mukam">
+                    </div>
+                    <h3 class="speaker-name">Nelly Mukam</h3>
+                    <p class="speaker-role">Architecte Systèmes FinTech</p>
+                    <span class="speaker-country">Cameroun</span>
+                </article>
 
-            <article>
-                <img src="placeholder-6.jpg" alt="Photo de Chloe Mensah">
-                <h3>Chloe Mensah</h3>
-                <p>Analyste Gouvernance de la Donnée</p>
-                <span>Ghana</span>
-            </article>
+                <article class="speaker-card" data-category="IA & Tech">
+                    <div class="speaker-img-container">
+                        <img src="images/amara.png" alt="Photo de Amara Koné">
+                    </div>
+                    <h3 class="speaker-name">Amara Koné</h3>
+                    <p class="speaker-role">Consultant Cloud & DevOps</p>
+                    <span class="speaker-country">Côte d'Ivoire</span>
+                </article>
 
-            <article>
-                <img src="placeholder-7.jpg" alt="Photo de Tariq Al-Mansoor">
-                <h3>Tariq Mansoor</h3>
-                <p>Chercheur en Cryptographie Appliquée</p>
-                <span>Tunisie</span>
-            </article>
+                <article class="speaker-card" data-category="Data">
+                    <div class="speaker-img-container">
+                        <img src="images/chloé.png" alt="Photo de Chloe Mensah">
+                    </div>
+                    <h3 class="speaker-name">Chloe Mensah</h3>
+                    <p class="speaker-role">Analyste Gouvernance de la Donnée</p>
+                    <span class="speaker-country">Ghana</span>
+                </article>
 
-            <article>
-                <img src="placeholder-8.jpg" alt="Photo de Zuri Mboya">
-                <h3>Zuri Mboya</h3>
-                <p>Développeuse Web & Core Blockchain</p>
-                <span>Kenya</span>
-            </article>
+                <article class="speaker-card" data-category="IA & Tech">
+                    <div class="speaker-img-container">
+                        <img src="images/tariq.png" alt="Photo de Tariq Mansoor">
+                    </div>
+                    <h3 class="speaker-name">Tariq Mansoor</h3>
+                    <p class="speaker-role">Chercheur en Cryptographie Appliquée</p>
+                    <span class="speaker-country">Tunisie</span>
+                </article>
 
-            <article>
-                <img src="placeholder-9.jpg" alt="Photo de Samuel Tesfaye">
-                <h3>Samuel Tesfaye</h3>
-                <p>Spécialiste Infrastructure Réseau & Edge</p>
-                <span>Éthiopie</span>
-            </article>
+                <article class="speaker-card" data-category="IA & Tech">
+                    <div class="speaker-img-container">
+                        <img src="images/zuri.png" alt="Photo de Zuri Mboya">
+                    </div>
+                    <h3 class="speaker-name">Zuri Mboya</h3>
+                    <p class="speaker-role">Développeuse Web & Core Blockchain</p>
+                    <span class="speaker-country">Kenya</span>
+                </article>
+
+                <article class="speaker-card" data-category="Data">
+                    <div class="speaker-img-container">
+                        <img src="images/samuel.png" alt="Photo de Samuel Tesfaye">
+                    </div>
+                    <h3 class="speaker-name">Samuel Tesfaye</h3>
+                    <p class="speaker-role">Spécialiste Infrastructure Réseau & Edge</p>
+                    <span class="speaker-country">Éthiopie</span>
+                </article>
+
+            </div>
         </div>
     </section>
 
     <!-- footer -->
-    <footer>
-        <div>
-            <div>
-                <h3>AfriConnect Summit 2026</h3>
-                <p>Le point de rencontre annuel de l'innovation technologique et de la cybersécurité en Afrique.</p>
-            </div>
-    
-            <div>
-                <h3>Liens Utiles</h3>
-                <ul>
-                    <li><a href="programme.html">Programme</a></li>
-                    <li><a href="intervenants.html">Intervenants</a></li>
-                    <li><a href="inscription.html">S'inscrire</a></li>
-                </ul>
-            </div>
-    
-            <div>
-                <h3>Suivez-nous</h3>
-                <div>
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
+    <footer class="w-100 py-5 main-footer text-black">
+        <div class="container border-bottom border-dark border-opacity-50 pb-4">
+            <div class="row g-4 justify-content-between">
+
+                <div class="col-md-4">
+                    <h3 class="h5 fw-bold mb-3 text-danger">AfriConnect Summit 2026</h3>
+                    <p class="small mb-0 opacity-75 fw-medium text-black">
+                        Le point de rencontre annuel de <br>
+                        l'innovation technologique <br>
+                        et de la cybersécurité en Afrique.
+                    </p>
                 </div>
+
+                <div class="col-md-3">
+                    <h3 class="h5 fw-bold mb-3 text-danger">Liens Utiles</h3>
+                    <ul class="list-unstyled mb-0 small fw-medium text-black">
+                        <li class="mb-2"><a href="programme.html"
+                                class="text-decoration-none text-black link-danger">Programme</a></li>
+                        <li class="mb-2"><a href="intervenants.html"
+                                class="text-decoration-none text-black link-danger">Intervenants</a></li>
+                        <li class="mb-2"><a href="contact.html"
+                                class="text-decoration-none text-black link-danger">S'inscrire</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h3 class="h5 fw-bold mb-3 text-danger">Suivez-nous</h3>
+                    <div class="d-flex flex-column gap-2 small fw-medium">
+                        <a href="#" aria-label="Twitter X"
+                            class="text-decoration-none text-black d-flex align-items-center justify-content-between pe-2 link-danger">
+                            <span>Twitter</span> <i class="fa-brands fa-x-twitter fs-6"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn"
+                            class="text-decoration-none text-black d-flex align-items-center justify-content-between pe-2 link-danger">
+                            <span>LinkedIn</span> <i class="fa-brands fa-linkedin-in fs-6"></i>
+                        </a>
+                        <a href="#" aria-label="GitHub"
+                            class="text-decoration-none text-black d-flex align-items-center justify-content-between pe-2 link-danger">
+                            <span>GitHub</span> <i class="fa-brands fa-github fs-6"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
-    
-        <div>
-            <p>&copy; <span id="currentYear">0000</span> AfriConnect by BTAN Tous droits réservés.</p>
+
+        <div class="container text-center pt-3 fw-medium text-black">
+            <p class="small mb-0 opacity-75">&copy; <span id="currentYear">2026</span> AfriConnect by BTAN. Tous droits
+                réservés.</p>
         </div>
     </footer>
-
 </body>
 
 </html>

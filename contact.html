@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Double:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
@@ -30,44 +31,46 @@
     </header>
 
     <!-- hero interne -->
-    <section>
-        <nav aria-label="Fil d'Ariane">
-            <ol>
-                <li><a href="index.html">Accueil</a></li>
-                <li aria-current="page">Contact</li>
-            </ol>
-        </nav>
+    <section class="ariane-banner">
+        <div class="ariane-container">
+            <nav aria-label="Fil d'Ariane" class="ariane-nav">
+                <ol class="ariane-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li aria-current="page">Contact</li>
+                </ol>
+            </nav>
 
-        <h1>Contactez l'Équipe AfriConnect</h1>
-        <p>Une question sur l'événement, une demande de partenariat ou besoin d'assistance logistique ? Nous sommes à
-            votre écoute.</p>
+            <h1 class="ariane-title">Contactez l'Équipe AfriConnect</h1>
+            <p class="ariane-desc">Une question sur l'événement, une demande de partenariat ou <br> besoin
+                d'assistancelogistique ? Nous sommes àvotre écoute.</p>
+        </div>
+
     </section>
 
     <!-- section formulaire -->
-    <section>
-        <h2>Formulaire d'Inscription Officiel</h2>
+    <section class="registration-section">
+        <div class="registration-container">
 
-        <div>
+            <div class="form-column">
+                <h2 class="section-title-form">Inscrivez-vous</h2>
+                <form id="registrationForm" action="#" method="POST" class="custom-form">
 
-            <div>
-                <form id="registrationForm" action="#" method="POST">
-
-                    <div>
+                    <div class="form-group">
                         <label for="fullName">Nom complet :</label>
                         <input type="text" id="fullName" name="fullName" required placeholder="Ex: Fatou Diop">
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="userEmail">Adresse électronique :</label>
                         <input type="email" id="userEmail" name="email" required placeholder="nom@exemple.com">
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="userPhone">Numéro de téléphone :</label>
                         <input type="tel" id="userPhone" name="phone" required placeholder="Ex: +221 77 000 00 00">
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="participationType">Type de participation :</label>
                         <select id="participationType" name="participationType" required>
                             <option value="">-- Choisissez une option --</option>
@@ -78,7 +81,7 @@
                         </select>
                     </div>
 
-                    <div>
+                    <div class="form-group">
                         <label for="africanCountry">Pays d'origine :</label>
                         <select id="africanCountry" name="country" required>
                             <option value="">-- Sélectionnez votre pays --</option>
@@ -95,107 +98,186 @@
                         </select>
                     </div>
 
-                    <div>
-                        <label for="userMotivation">Message ou Motivations :</label>
-                        <textarea id="userMotivation" name="motivation" rows="5" required
+                    <div class="form-group">
+                        <label for="userMotivation">Message :</label>
+                        <textarea id="userMotivation" name="motivation" rows="4" required
                             placeholder="Pourquoi souhaitez-vous participer à l'AfriConnect Summit ?"></textarea>
                     </div>
 
-                    <button type="submit">Valider mon inscription</button>
+                    <button type="submit" class="btn-submit">Valider mon inscription</button>
+
+                    <div class="success-message" id="successMessage">
+                        Votre message a bien été envoyé. Merci !
+                    </div>
                 </form>
+            </div>
+
+            <div class="info-column">
+                <h2 class="section-title-info">Infos Pratiques & Contact</h2>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Lieu de l'événement :</strong>
+                            <p>Centre de Conférences International, Dakar, Sénégal</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>Contact Secrétariat :</strong>
+                            <p><a href="mailto:contact@africonnectsummit.com">contact@africonnectsummit.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>Téléphone :</strong>
+                            <p>+221 33 800 00 00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123450.45719379965!2d-17.491295246777353!3d14.716677026723225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172c91c3d1d1f%3A0xf639803df3985b19!2sDakar%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2s!4v1710000000000!5m2!1sfr!2s"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
 
         </div>
     </section>
 
     <!-- section faq accordeon -->
-    <section>
-        <h2>Foire Aux Questions (FAQ)</h2>
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="faq-main-title">Foire Aux Questions (FAQ)</h2>
 
-        <div class="faq-accordion">
+            <div class="faq-accordion">
 
-            <div class="faq-item">
-                <input type="checkbox" id="faq-q1" class="faq-toggle">
-                <label for="faq-q1" class="faq-title">Où et quand se déroule l'AfriConnect Summit 2026 ?</label>
-                <div class="faq-content">
-                    <p>L'événement se tiendra du 15 au 17 Novembre 2026 au Centre de Conférences Internationales de
-                        Dakar (CICAD) à Diamniadio, Sénégal.</p>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-q1" class="faq-toggle">
+                    <label for="faq-q1" class="faq-title">
+                        <span>Où et quand se déroule l'AfriConnect Summit 2026 ?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </label>
+                    <div class="faq-content">
+                        <p>L'événement se tiendra du 15 au 17 Novembre 2026 au Centre de Conférences Internationales de
+                            Dakar (CICAD) à Diamniadio, Sénégal.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <input type="checkbox" id="faq-q2" class="faq-toggle">
-                <label for="faq-q2" class="faq-title">Qui peut participer à cet événement ?</label>
-                <div class="faq-content">
-                    <p>Le sommet est ouvert aux professionnels de la tech, étudiants en cybersécurité ou informatique,
-                        entrepreneurs, investisseurs (VC) et décideurs institutionnels du continent et de
-                        l'international.</p>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-q2" class="faq-toggle">
+                    <label for="faq-q2" class="faq-title">
+                        <span>Qui peut participer à cet événement ?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </label>
+                    <div class="faq-content">
+                        <p>Le sommet est ouvert aux professionnels de la tech, étudiants en cybersécurité ou
+                            informatique, entrepreneurs, investisseurs (VC) et décideurs institutionnels du continent et
+                            de l'international.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <input type="checkbox" id="faq-q3" class="faq-toggle">
-                <label for="faq-q3" class="faq-title">Comment vais-je recevoir mon billet après mon inscription
-                    ?</label>
-                <div class="faq-content">
-                    <p>Une fois votre formulaire validé et traité par notre équipe sous 48h, vous recevrez un e-billet
-                        sécurisé muni d'un QR Code unique directement sur l'adresse électronique renseignée.</p>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-q3" class="faq-toggle">
+                    <label for="faq-q3" class="faq-title">
+                        <span>Comment vais-je recevoir mon billet après mon inscription ?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </label>
+                    <div class="faq-content">
+                        <p>Une fois votre formulaire validé et traité par notre équipe sous 48h, vous recevrez un
+                            e-billet sécurisé muni d'un QR Code unique directement sur l'adresse électronique
+                            renseignée.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <input type="checkbox" id="faq-q4" class="faq-toggle">
-                <label for="faq-q4" class="faq-title">Un certificat de participation est-il délivré ?</label>
-                <div class="faq-content">
-                    <p>Oui, un certificat officiel de présence et de compétences, cosigné par les partenaires
-                        académiques et de l'événement, sera envoyé au format numérique à tous les participants ayant
-                        assisté aux ateliers.</p>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-q4" class="faq-toggle">
+                    <label for="faq-q4" class="faq-title">
+                        <span>Un certificat de participation est-il délivré ?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </label>
+                    <div class="faq-content">
+                        <p>Oui, un certificat officiel de présence et de compétences, cosigné par les partenaires
+                            académiques et de l'événement, sera envoyé au format numérique à tous les participants ayant
+                            assisté aux ateliers.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <input type="checkbox" id="faq-q5" class="faq-toggle">
-                <label for="faq-q5" class="faq-title">Comment puis-je soumettre un projet pour les sessions de pitch
-                    ?</label>
-                <div class="faq-content">
-                    <p>Vous devez d'abord cocher l'option correspondante lors de votre inscription. Un lien de
-                        soumission de votre Pitch Deck vous sera envoyé pour évaluation par le comité de sélection des
-                        startups.</p>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-q5" class="faq-toggle">
+                    <label for="faq-q5" class="faq-title">
+                        <span>Comment puis-je soumettre un projet pour les sessions de pitch ?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </label>
+                    <div class="faq-content">
+                        <p>Vous devez d'abord cocher l'option correspondante lors de votre inscription. Un lien de
+                            soumission de votre Pitch Deck vous sera envoyé pour évaluation par le comité de sélection
+                            des startups.</p>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </section>
 
     <!-- footer -->
-    <footer>
-        <div>
-            <div>
-                <h3>AfriConnect Summit 2026</h3>
-                <p>Le point de rencontre annuel de l'innovation technologique et de la cybersécurité en Afrique.</p>
-            </div>
-    
-            <div>
-                <h3>Liens Utiles</h3>
-                <ul>
-                    <li><a href="programme.html">Programme</a></li>
-                    <li><a href="intervenants.html">Intervenants</a></li>
-                    <li><a href="inscription.html">S'inscrire</a></li>
-                </ul>
-            </div>
-    
-            <div>
-                <h3>Suivez-nous</h3>
-                <div>
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
+    <footer class="w-100 py-5 main-footer text-black">
+        <div class="container border-bottom border-dark border-opacity-50 pb-4">
+            <div class="row g-4 justify-content-between">
+
+                <div class="col-md-4">
+                    <h3 class="h5 fw-bold mb-3 text-danger">AfriConnect Summit 2026</h3>
+                    <p class="small mb-0 opacity-75 fw-medium text-black">
+                        Le point de rencontre annuel de <br>
+                        l'innovation technologique <br>
+                        et de la cybersécurité en Afrique.
+                    </p>
                 </div>
+
+                <div class="col-md-3">
+                    <h3 class="h5 fw-bold mb-3 text-danger">Liens Utiles</h3>
+                    <ul class="list-unstyled mb-0 small fw-medium text-black">
+                        <li class="mb-2"><a href="programme.html"
+                                class="text-decoration-none text-black link-danger">Programme</a></li>
+                        <li class="mb-2"><a href="intervenants.html"
+                                class="text-decoration-none text-black link-danger">Intervenants</a></li>
+                        <li class="mb-2"><a href="contact.html"
+                                class="text-decoration-none text-black link-danger">S'inscrire</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h3 class="h5 fw-bold mb-3 text-danger">Suivez-nous</h3>
+                    <div class="d-flex flex-column gap-2 small fw-medium">
+                        <a href="#" aria-label="Twitter X"
+                            class="text-decoration-none text-black d-flex align-items-center justify-content-between pe-2 link-danger">
+                            <span>Twitter</span> <i class="fa-brands fa-x-twitter fs-6"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn"
+                            class="text-decoration-none text-black d-flex align-items-center justify-content-between pe-2 link-danger">
+                            <span>LinkedIn</span> <i class="fa-brands fa-linkedin-in fs-6"></i>
+                        </a>
+                        <a href="#" aria-label="GitHub"
+                            class="text-decoration-none text-black d-flex align-items-center justify-content-between pe-2 link-danger">
+                            <span>GitHub</span> <i class="fa-brands fa-github fs-6"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
-    
-        <div>
-            <p>&copy; <span id="currentYear">0000</span> AfriConnect by BTAN Tous droits réservés.</p>
+
+        <div class="container text-center pt-3 fw-medium text-black">
+            <p class="small mb-0 opacity-75">&copy; <span id="currentYear">2026</span> AfriConnect by BTAN. Tous droits
+                réservés.</p>
         </div>
     </footer>
 
