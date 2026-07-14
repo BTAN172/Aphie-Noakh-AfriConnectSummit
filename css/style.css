@@ -11,7 +11,7 @@
      --font-size: 16px;
      --bg-light: #f8fafc;  
      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     --bs-success: #10b981; 
+     --bs-success: #55e2c4; 
     --bs-danger: #d53f69;
 }
 
@@ -255,10 +255,12 @@ header nav a:hover {
 }
 
 /* Rappels de couleurs  */
-.stat-card:first-child {
+.stat-card:nth-child(1),
+.stat-card:nth-child(3) {
     border-bottom: 4px solid var(--bs-success); 
 }
-.stat-card:last-child {
+.stat-card:nth-child(2),
+.stat-card:nth-child(4) {
     border-bottom: 4px solid var(--bs-danger);
 }
 
@@ -435,7 +437,7 @@ header nav a:hover {
     padding: 4px 12px;
     border-radius: 20px;
     background-color: rgba(213, 63, 105, 0.1); /* Fond rose translucide */
-    color: var(--primary-color, #d53f69);
+    color: var(--bs-danger);
 }
 
 .speaker-card:hover {
@@ -601,7 +603,7 @@ header nav a:hover {
 
 /* Footer  */
 .main-footer {
-    background-color: var(--accent-color, #10b981);
+    background-color: #f8f3f3;
     font-family: var(--font-family, sans-serif);
 }
 
@@ -785,7 +787,7 @@ header nav a:hover {
     color: var(--bs-danger);
 }
 
-/* MISE EN ÉVIDENCE DE L'ONGLET SÉLECTIONNÉ */
+/* Mise en evidence de l'onglet sélectionné */
 .tab-button[aria-selected="true"] {
     color: var(--bs-danger);
     border-bottom: 3px solid var(--bs-danger); 
@@ -842,7 +844,7 @@ header nav a:hover {
 
 /* En-tête du tableau  */
 .schedule-table th {
-    background-color: var(--accent-color, #10b981);
+    background-color: var(--bs-success);
     color: #000000;
     font-weight: 700;
     padding: 16px 20px;
@@ -858,7 +860,7 @@ header nav a:hover {
     color: #000000;
 }
 
-/* ALTERNANCE DE COULEUR DES LIGNES */
+/* Alternance de couleurs des lignes */
 .schedule-table tbody tr:nth-of-type(even) {
     background-color: #f8fafc; 
 }
@@ -893,8 +895,7 @@ header nav a:hover {
     width: 20%;
 }
 
-/* SECTION INSCRIPTION ET CONTACT (DEUX COLONNES & MAPS)*/
-
+/* Section inscription et contact (2 colonnes et maps)*/
 .registration-section {
     width: 100%;
     padding: 60px 20px;
@@ -968,12 +969,12 @@ header nav a:hover {
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Focus actif (Vert émeraude) */
+/* Focus actif  */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent-color, #10b981);
+    border-color: var(--bs-success);
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
 }
 
@@ -992,7 +993,7 @@ header nav a:hover {
 }
 
 .btn-submit:hover {
-    background-color: #be2e54; /* Rose plus foncé au survol */
+    background-color: #be2e54;
 }
 
 /* Message de validation (Succès) caché par défaut */
@@ -1007,7 +1008,7 @@ header nav a:hover {
     border-radius: 4px;
 }
 
-/* --- Informations de contact (Détails) --- */
+/* --- Informations de contact --- */
 .contact-details {
     display: flex;
     flex-direction: column;
@@ -1055,8 +1056,7 @@ header nav a:hover {
     border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/*  ACCORDÉON DE LA FAQ  */
-
+/*  La fac en accordeon  */
 .faq-section {
     width: 100%;
     padding: 80px 20px;
@@ -1082,7 +1082,7 @@ header nav a:hover {
 .faq-accordion {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Écart entre chaque question */
+    gap: 15px; 
 }
 
 .faq-item {
@@ -1146,7 +1146,6 @@ header nav a:hover {
 }
 
 /* ---  Comportement quand l'input est coché (:checked) --- */
-
 /* Déploie la zone de texte */
 .faq-toggle:checked ~ .faq-content {
     max-height: 300px; 
@@ -1163,6 +1162,180 @@ header nav a:hover {
     transform: rotate(180deg);
     color: var(--bs-danger);
 }
+
+/* MEDIA QUERY : Mobile (Sous 768px - Testé à 375px) 1 colonne */
+@media screen and (max-width: 767px) {
+    
+    /* --- EN-TÊTE & NAVBAR RESPONSIVE (DÉROULANT) --- */
+    header {
+        padding: 0 20px;
+    }
+
+    /* Affichage du bouton burger */
+    .menu-burger {
+        display: flex;
+    }
+
+    /* Le menu descend sous la navbar sans couvrir tout l'écran */
+    header nav {
+        position: absolute; 
+        top: 60px;          
+        left: 0;
+        width: 100%;
+        background-color: var(--bs-success);
+        
+        /* Masqué par défaut avec transition fluide de hauteur */
+        max-height: 0; 
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    /* Ajustement du conteneur interne */
+    header nav div {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        padding: 20px 0; 
+    }
+
+    /* Transformation de la liste de liens en colonne  */
+    header nav ul {
+        flex-direction: column;
+        gap: 5px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    header nav a {
+        font-size: 1rem; 
+        color: var(--secondary-color);
+        display: block;
+        padding: 5px 0;
+    }
+ 
+    /* Déroule le menu avec sa hauteur exacte */
+    header nav.active {
+        max-height: 300px; /* Limite la hauteur au strict nécessaire pour les liens */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* --- Mise en page du contenu sur 1 colonne--- */
+    .hero-section {
+        padding-top: 120px;
+    }
+
+    .titre {
+        font-size: 2.2rem;
+    }
+
+    .date {
+        font-size: 1.1rem;
+    }
+
+    .btns {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    /* Passage de toutes les grilles sur 1 seule colonne */
+    .stats-grid,
+    .why-flex-container,
+    .speakers-grid,
+    .speaker-grid,
+    .logo-wrapper {
+        grid-template-columns: 1fr ;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .partner-logo {
+        width: 100% ;
+        max-width: 240px;
+        height: 90px ;
+    }
+
+    /* Contact & Formulaire */
+    .registration-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .form-column, 
+    .info-column {
+        flex: 1 1 100%;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .contact-details {
+        margin-bottom: 40px;
+    }
+}
+
+
+/* Tablette (De 768px à 1199px - Testé à 768px) 2 Colonnes*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    
+    /* Grille de statistiques sur 2 colonnes */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) ;
+    }
+
+    /* Cartes "Pourquoi participer" sur 2 colonnes */
+    .why-flex-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .why-flex-container .scroll-reveal {
+        flex: 0 0 calc(50% - 15px);
+    }
+
+    /* Grilles d'intervenants sur 2 colonnes */
+    .speakers-grid,
+    .speaker-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Formulaire de contact côte à côte sur 2 colonnes */
+    .registration-container {
+        flex-direction: row;
+    }
+
+    .form-column {
+        flex: 1 1 50%;
+    }
+
+    .info-column {
+        flex: 1 1 50%;
+    }
+}
+/*  Style de base du bouton amburger (JavaScript)*/
+.menu-burger {
+    display: none; /* Masqué sur Desktop par défaut */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.menu-burger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
 
 
 
