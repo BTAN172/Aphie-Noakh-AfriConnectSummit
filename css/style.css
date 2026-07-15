@@ -148,7 +148,7 @@ header nav a:hover {
 }
 
 .btn2:hover {
-    background-color: var(--accent-color);
+    background-color: var(--bs-success);
     color: #ffffff;
     transform: translateY(-2px);
 }
@@ -941,6 +941,7 @@ header nav a:hover {
     color: var(--bs-danger);
     margin-bottom: 25px;
     font-weight: 700;
+    margin-top: 45px;
 }
 
 /* --- Style des champs du Formulaire --- */
@@ -1078,7 +1079,6 @@ header nav a:hover {
     font-weight: 700;
 }
 
-/* --- Structure de l'accordéon --- */
 .faq-accordion {
     display: flex;
     flex-direction: column;
@@ -1111,7 +1111,7 @@ header nav a:hover {
     padding: 20px 24px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #000000;
+    color: #040404 ;
     cursor: pointer;
     user-select: none;
     transition: color 0.25s ease;
@@ -1163,6 +1163,27 @@ header nav a:hover {
     color: var(--bs-danger);
 }
 
+/*  Style de base du bouton amburger (JavaScript)*/
+.menu-burger {
+    display: none; /* Masqué sur Desktop par défaut */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.menu-burger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
 /* MEDIA QUERY : Mobile (Sous 768px - Testé à 375px) 1 colonne */
 @media screen and (max-width: 767px) {
     
@@ -1276,7 +1297,6 @@ header nav a:hover {
     }
 }
 
-
 /* Tablette (De 768px à 1199px - Testé à 768px) 2 Colonnes*/
 @media screen and (min-width: 768px) and (max-width: 1199px) {
     
@@ -1314,28 +1334,243 @@ header nav a:hover {
         flex: 1 1 50%;
     }
 }
-/*  Style de base du bouton amburger (JavaScript)*/
-.menu-burger {
-    display: none; /* Masqué sur Desktop par défaut */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
+
+//*  Selection du dark mode*/
+body {
+    background-color: var(--secondary-color);
+    color: var(--bg-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*  Passage au fond sombre pour toutes les sections  */
+body.dark-theme .why-section,
+body.dark-theme .speakers-section,
+body.dark-theme .themes-section,
+body.dark-theme .program-section,
+body.dark-theme .schedule-section,
+body.dark-theme .registration-section,
+body.dark-theme .faq-section,
+body.dark-theme section { 
+    background-color: var(--secondary-color) ;
+    color: var(--bg-light);
+}
+
+/* Fonds des éléments internes (cartes, blocs, formulaire)  */
+body.dark-theme .stat-card,
+body.dark-theme .scroll-reveal,          
+body.dark-theme .speaker-card,           
+body.dark-theme .theme-card,            
+body.dark-theme .program-day-box,        
+body.dark-theme .faq-card,               
+body.dark-theme .form-column,            
+body.dark-theme .info-column,            
+body.dark-theme .partner-logo,
+body.dark-theme .ariane-banner{
+    background-color: #1e1e1e ; 
+    color: var(--bg-light) ;
+    border-color: #2d2d2d ;
+}
+body.dark-theme .main-footer{
+    background-color: #e7eaed ;
+}
+
+/*  Couleur des textes et des titres */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,           
+body.dark-theme .contact-item a,       
+body.dark-theme label, 
+body.dark-theme .ariane-links li a,                  
+body.dark-theme .ariane-links li {
+    color: #ffffff ;
+}
+
+body.dark-theme .speakers-filter-section .section-title,
+body.dark-theme .stats-titre,
+body.dark-theme .faq-main-title,
+body.dark-theme .form-column h2,         
+body.dark-theme .info-column h2,
+body.dark-theme .why-titre,
+body.dark-theme .speakers-titre,
+body.dark-theme .theme-title, 
+body.dark-theme .partners-main-titre,
+body.dark-theme .panel-title{
+    color: var(--bs-danger);
+}
+
+body.dark-theme .ariane-title{
+    color: var(--bs-danger);
+}
+
+body.dark-theme .ariane-desc{
+    color: var(--bs-success);
+}
+
+body.dark-theme .ariane-links li + li::before{
+    color: var(--bg-light)
+}
+body.dark-theme .faq-section {
+    background-color: #121212;
+}
+body.dark-theme .faq-content p{
+  color: var(--secondary-color);
+}
+body.dark-theme .faq-card {
+    background-color: #ffffff;
+    border-color: var(--bs-success);
+}
+body.dark-theme .faq-card:hover .faq-title {
+    color: var(--bs-success);
+}
+body.dark-theme .faq-title {
+    color: #000000;
+}
+
+
+body.dark-theme .contact-item strong{
+    color: #ffffff;
+}
+
+body.dark-theme .stat-label,
+body.dark-theme .speaker-role,
+body.dark-theme .scroll-reveal p,
+body.dark-theme .info-column p {
+    color: var(--bg-light) ;
+    opacity: 0.8; 
+}
+
+/* Inputs du formulaire en Dark Mode */
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+    background-color: #2d2d2d ;
+    color: #ffffff ;
+    border: 1px solid #444444 ;
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+    color: #94a3b8 ;
+}
+
+/* Boutons de filtres et d'onglets en Dark Mode */
+body.dark-theme .btn-filter,
+body.dark-theme .tab-button {
+    background-color: #2d2d2d ;
+    color: #ffffff ;
+    border: 1px solid #444444 ;
+}
+
+body.dark-theme .btn-filter:hover {
+    color: var(--bs-danger);
+    border-color: var(--bs-danger);
+}
+
+body.dark-theme .tab-button {
+    color: rgba(255, 255, 255, 0.7) ;
+}
+
+body.dark-theme .tab-button.active,
+body.dark-theme .tab-button[aria-selected="true"] {
+    background-color: var(--bs-danger) ;
+    color: #ffffff ;
+    border-color: var(--bs-danger) ;
+}
+
+/* la section Hero de la page d'accueil reste inchangée */
+body.dark-theme .hero-section,
+body.dark-theme .hero-section * {
+    background-color: transparent ;
+}
+body.dark-theme .compteur .box {
+    background-color: rgba(255, 255, 255, 0.95) ;
+}
+body.dark-theme .compteur .number {
+    color: rgb(4, 4, 4) ;
+}
+body.dark-theme .compteur .label {
+    color: #64748b ;
+}
+
+/* Style du bouton toggle theme */
+.theme-toggle-btn {
     background: none;
     border: none;
-    padding: 0;
+    color: var(--bg-light);
+    font-size: 1.3rem;
     cursor: pointer;
+    padding: 8px;
+    margin-left: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
 }
 
-.menu-burger span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--secondary-color);
-    border-radius: 3px;
-    transition: all 0.3s ease;
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+    color: var(--bs-danger);
 }
 
+/*navbar effet shrink au scroll */
+header {
+    transition: height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    height: 60px; /* Réduit la hauteur de 75px à 60px au scroll */
+    background-color: rgba(85, 226, 196, 0.95); /* Opacité légèrement translucide */
+    backdrop-filter: blur(5px); /* Floutage moderne sous le header */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Ombre portée */
+}
+
+/* navbar au scroll */
+body.dark-theme header.scrolled {
+    background-color: #909eab;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+/* Réduction légère du logo lorsque la navbar rétrécit */
+header.scrolled img {
+    height: 48px;
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+/* Bouton retour en haut */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--bs-danger);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background-color: var(--bs-success);
+    color: var(--bg-light);
+}
 
 
 
