@@ -1,3 +1,6 @@
+html.dark-theme, html.dark-theme body {
+    background-color: rgb(4, 4, 4) !important;
+}
 *{
     margin: 0;
 }
@@ -342,7 +345,7 @@ header nav a:hover {
 /* Style de l'icône Font Awesome */
 .icon-wrapper i {
     font-size: 1.8rem;
-    color: var(--bs-success); /* Icône en vert émeraude */
+    color: var(--bs-success); 
 }
 
 .scroll-reveal h3 {
@@ -454,7 +457,7 @@ header nav a:hover {
 .speaker-card:hover .speaker-country {
     background-color: var(--bs-danger);
     color: #ffffff;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
 }
 
 /* Bouton de direction (CTA)*/
@@ -1335,7 +1338,7 @@ header nav a:hover {
     }
 }
 
-//*  Selection du dark mode*/
+/*  Selection du dark mode*/
 body {
     background-color: var(--secondary-color);
     color: var(--bg-light);
@@ -1519,10 +1522,12 @@ header {
 }
 
 header.scrolled {
-    height: 60px; /* Réduit la hauteur de 75px à 60px au scroll */
-    background-color: rgba(85, 226, 196, 0.95); /* Opacité légèrement translucide */
-    backdrop-filter: blur(5px); /* Floutage moderne sous le header */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Ombre portée */
+    /* Réduit la hauteur de 75px à 60px au scroll */
+    height: 60px; 
+    background-color: var(--bs-success); 
+    /* Floutage moderne sous le header */
+    backdrop-filter: blur(5px); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
 }
 
 /* navbar au scroll */
@@ -1572,6 +1577,20 @@ header.scrolled img {
     color: var(--bg-light);
 }
 
+/*Animations  d'apparition (INTERSECTION OBSERVER)*/
+
+/* État  caché de la section  */
+.prepare-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* État final visible déclenché par le JavaScript */
+.active-fade {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 
