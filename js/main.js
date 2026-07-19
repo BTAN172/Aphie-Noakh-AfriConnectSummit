@@ -182,3 +182,170 @@ document.addEventListener('DOMContentLoaded', () => {
         const countdownInterval = setInterval(updateCountdown, 1000);
     }
 
+    // --- VALIDATION DU FORMULAIRE D'INSCRIPTION ---
+    const regForm = document.querySelector('#registrationForm');
+
+    if (regForm) {
+        const inputs = regForm.querySelectorAll('input, select, textarea');
+        
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Fonction pour afficher une erreur sous le bon champ
+        const showError = (input, message) => {
+            const container = input.parentElement;
+            let errorElement = container.querySelector('.error-message');
+            
+            if (!errorElement) {
+                errorElement = document.createElement('small');
+                errorElement.className = 'error-message';
+                container.appendChild(errorElement);
+            }
+            
+            errorElement.innerText = message;
+            input.classList.remove('is-valid');
+            input.classList.add('is-invalid');
+        };
+
+        // Fonction pour valider un champ avec succès
+        const showSuccess = (input) => {
+            const container = input.parentElement;
+            const errorElement = container.querySelector('.error-message');
+            if (errorElement) errorElement.remove();
+            
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+        };
+
+        // Logique de validation stricte par type de champ
+        const validateInput = (input) => {
+            const val = input.value.trim();
+
+            // 1. Tous les champs requis obligatoires
+            if (input.hasAttribute('required') && val === '') {
+                showError(input, 'Ce champ est obligatoire.');
+                return false;
+            }
+
+            // 2. Vérification de l'Email via Regex
+            if (input.type === 'email' && !emailRegex.test(val)) {
+                showError(input, 'Veuillez entrer une adresse email valide.');
+                return false;
+            }
+
+            // 3. Téléphone : On nettoie les espaces/caractères spéciaux pour ne garder que les chiffres
+            if (input.type === 'tel') {
+                const digitsOnly = val.replace(/\D/g, ''); 
+                if (digitsOnly.length < 8) {
+                    showError(input, 'Le numéro de téléphone doit contenir au moins 8 chiffres.');
+                    return false;
+                }
+            }
+
+            // 4. Message (textarea) : Minimum 20 caractères
+            if (input.tagName.toLowerCase() === 'textarea' && val.length < 20) {
+                showError(input, 'Votre message doit contenir au moins 20 caractères.');
+                return false;
+            }
+
+            showSuccess(input);
+            return true;
+        };
+
+        // Écouteurs pour valider pendant que l'utilisateur écrit ou change de case
+        inputs.forEach(input => {
+            input.addEventListener('input', () => validateInput(input));
+            input.addEventListener('blur', () => validateInput(input));
+            input.addEventListener('change', () => validateInput(input)); // Utile pour les balises <select>
+        });
+
+        // Soumission du formulaire
+        regForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isFormValid = true;
+
+            // Force la vérification de l'ensemble des champs
+            inputs.forEach(input => {
+                if (!validateInput(input)) {
+                    isFormValid = false;
+                }
+            });
+
+            if (isFormValid) {
+                // Utilisation et stylisation de ta div #successMessage existante
+                const successAlert = document.querySelector('#successMessage');
+                if (successAlert) {
+                    successAlert.innerHTML = '<i class="fa-solid fa-circle-check"></i> Votre inscription a été enregistrée avec succès !';
+                    successAlert.classList.add('show-success');
+                }
+
+                // Réinitialisation complète du formulaire
+                regForm.reset();
+
+                // Nettoyage des bordures vertes de succès après reset
+                inputs.forEach(input => input.classList.remove('is-valid'));
+
+                // Masquage automatique du message après 5 secondes
+                setTimeout(() => {
+                    if (successAlert) successAlert.classList.remove('show-success');
+                }, 5000);
+            }
+        });
+    }
+
+    // --- FILTRAGE DYNAMIQUE DES INTERVENANTS ---
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const speakerCards = document.querySelectorAll('.speaker-card');
+
+    if (filterButtons.length > 0 && speakerCards.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 1. Gestion de l'état actif sur les boutons (Accessibilité)
+                filterButtons.forEach(btn => btn.setAttribute('aria-pressed', 'false'));
+                button.setAttribute('aria-pressed', 'true');
+
+                // 2. Récupération de la catégorie sélectionnée
+                const selectedCategory = button.textContent.trim();
+
+                // 3. Filtrage des cartes
+                speakerCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+
+                    if (selectedCategory === 'Tous' || cardCategory === selectedCategory) {
+                        // On affiche la carte en retirant la classe de masquage
+                        card.classList.remove('card-hidden');
+                    } else {
+                        // On masque la carte en ajoutant la classe
+                        card.classList.add('card-hidden');
+                    }
+                });
+            });
+        });
+    }
+
+    // --- GESTION DES ONGLETS DU PLANNING ---
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const schedulePanels = document.querySelectorAll('.schedule-panel');
+
+    // FORCE l'affichage du Jour 1 au démarrage pour éviter le conflit CSS
+    if(document.getElementById('panel-jour1')) {
+        document.getElementById('panel-jour1').classList.add('active-panel');
+    }
+
+    if (tabButtons.length > 0 && schedulePanels.length > 0) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetPanelId = button.getAttribute('aria-controls');
+
+                tabButtons.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+                button.setAttribute('aria-selected', 'true');
+
+                schedulePanels.forEach(panel => {
+                    if (panel.id === targetPanelId) {
+                        panel.classList.add('active-panel');
+                    } else {
+                        panel.classList.remove('active-panel');
+                    }
+                });
+            });
+        });
+    }
