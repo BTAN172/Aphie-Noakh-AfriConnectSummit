@@ -349,3 +349,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Année dynamique dans le footer ---
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
